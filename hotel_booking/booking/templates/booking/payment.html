@@ -1,0 +1,13 @@
+<h2>Оплата</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" placeholder="Имя на карте" required><br>
+  <input type="text" placeholder="Номер карты" required><br>
+  <input type="text" placeholder="MM/YY" required><br>
+  <input type="text" placeholder="CVV" required><br>
+
+  <button class="btn btn-primary">Оплатить</button>
+</form>
+
+<p style="color:red;"> Оплата прошла успешно </p>

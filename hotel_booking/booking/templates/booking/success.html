@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Confirmed - Hotel Paradise{% endblock %}
+
+{% block content %}
+<div class="success-page">
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Booking Confirmed!</h1>
+        <p class="success-message">Thank you for your reservation. We look forward to welcoming you!</p>
+        
+        <div class="booking-details">
+            <div class="detail-section">
+                <h3>Booking Information</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Booking ID:</span>
+                    <span class="detail-value">#{{ booking.id }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Room:</span>
+                    <span class="detail-value">{{ booking.room.number }} ({{ booking.room.hotel.name }})</span>
+                </div>
+            </div>
+            
+            <div class="detail-section">
+                <h3>Stay Dates</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Check-in:</span>
+                    <span class="detail-value">{{ booking.check_in }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Check-out:</span>
+                    <span class="detail-value">{{ booking.check_out }}</span>
+                </div>
+            </div>
+            
+            <div class="detail-section">
+                <h3>Guest</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Name:</span>
+                    <span class="detail-value">{{ booking.client.first_name }} {{ booking.client.last_name }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">{{ booking.client.email }}</span>
+                </div>
+            </div>
+            
+            {% if booking.services.all %}
+            <div class="detail-section">
+                <h3>Additional Services</h3>
+                <ul class="services-list">
+                    {% for service in booking.services.all %}
+                    <li>{{ service.name }} <span>+${{ service.price }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <div class="detail-section total-section">
+                <div class="detail-row total-row">
+                    <span class="detail-label">Total Price:</span>
+                    <span class="detail-value total-price">${{ booking.total_price }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="success-actions">
+            <a href="{% url 'index' %}" class="btn">Back to Rooms</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

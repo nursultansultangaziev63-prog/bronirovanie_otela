@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отель</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+        header {
+            background: #1e293b;
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .container {
+            padding: 40px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 250px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.1);
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>🏨 Отель</div>
+    <div>
+        <a href="{% url 'cart' %}">Корзина</a>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Номера</h1>
+
+    <div class="card">
+        <h3>Стандарт</h3>
+        <p>Цена: 3000₽</p>
+        <button>Забронировать</button>
+    </div>
+</div>
+
+</body>
+</html>

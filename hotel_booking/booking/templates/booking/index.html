@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="page-title">Our Rooms</h1>
+
+<div class="rooms">
+    {% for room in rooms %}
+    <div class="room-card">
+        {% if room.image %}
+            <img src="{{ room.image.url }}" alt="{{ room.number }}">
+        {% else %}
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Placeholder">
+        {% endif %}
+        <div class="room-info">
+            <h2>Room {{ room.number }}</h2>
+            <p class="price">${{ room.price }} / night</p>
+            <a href="{% url 'room_detail' room.id %}" class="btn">View Details</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

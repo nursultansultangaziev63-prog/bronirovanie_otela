@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Hotel Paradise{% endblock %}
+
+{% block content %}
+<div class="about-page">
+    <section class="about-hero">
+        <h1 class="page-title">About Hotel Paradise</h1>
+        <p class="about-intro">
+            Nestled in the heart of the city, Hotel Paradise offers an unforgettable 
+            experience combining luxury, comfort, and exceptional service since 2010.
+        </p>
+    </section>
+    
+    <section class="about-images">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel Exterior">
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Hotel Room">
+        </div>
+    </section>
+    
+    <section class="about-features">
+        <div class="feature">
+            <div class="feature-icon">🌟</div>
+            <h3>Premium Service</h3>
+            <p>24/7 concierge and room service to make your stay perfect.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📍</div>
+            <h3>Prime Location</h3>
+            <p>Walking distance to major attractions and business centers.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🛏️</div>
+            <h3>Comfort First</h3>
+            <p>Luxurious rooms with premium amenities for ultimate relaxation.</p>
+        </div>
+    </section>
+    
+    <section class="about-cta">
+        <p>Ready to experience luxury?</p>
+        <a href="{% url 'index' %}" class="btn">View Our Rooms</a>
+    </section>
+</div>
+{% endblock %}
